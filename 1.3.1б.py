@@ -1,4 +1,5 @@
 import numpy as np  # імпорт бібліотеки numpy
+from copy import copy
 
 
 def unionPairs(n):  # створюємо генератор та повертаємо його значення при кожному визовІ функції
@@ -17,10 +18,10 @@ while True:
             break
     else:
         print(f'Матриця А:\n{matrix_A}')  # виведення на екран матриці А
-
+        matrix_B = copy(matrix_A)
         for a in range(3):
             for b in range(3):
-                matrix_A[a][b] = matrix_A[b][a]  # транспортування матриці А
-        print(f'Транспонована матриця А:\n{matrix_A}')  # виведення на екран транспонованої матриці А
-    if input('CONTINUE - Enter, BREAK - something'):
-        break
+                matrix_B[a][b] = matrix_A[b][a]  # транспортування матриці А
+        print(f'Транспонована матриця А:\n{matrix_B}')  # виведення на екран транспонованої матриці А
+        if input('CONTINUE - Enter, BREAK - something'):
+            break
